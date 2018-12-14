@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Finding Easter</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="icon" type="image/png" href="Icon.png" />
+	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<h1>
+				<a class="title">Finding Easter</a>
+			</h1>
+		</ul>
+		<div style="clear: both"></div>
+	</nav>
+	<article>
+		<header>
+			<img src="Easter.jpg" class="headerImage" alt="Easter">
+			<a href="https://www.defibforlife.org.au/happy-easter/">
+				<span class="imageText">DefibForLife.com, 2018</span>
+			</a>
+		</header>
+		<form action="cgi-bin/easter_b.py" method="GET">
+			<hr class="rule" />
+			<br />
+			<p>
+				<div align="center">
+					<form>
+						<h2 class="title"> Please enter a year:</h2>
+						<center> <input type="text" name="user_input_year" class="mytext"> </center>
+						<br>
+
+						<label>
+							<input type="radio" name="date_selection" value="numeric_d"> Numeric Date (20/04/2003)
+						</label>
+						<p></p>
+						<label>
+							<input type="radio" name="date_selection" value="verbose_d"> Verbose Date (20th of April 2003)
+						</label>
+						<p></p>
+						<label>
+							<input type="radio" name="date_selection" value="both_d"> Both Dates (20th of April 2003 and 20/04/2003)
+						</label>
+
+						<center> <input type="submit" value="Submit"> </center>
+					</form>
+				</div>
+
+
+	</article>
+	<footer>
+		<hr class="rule2" style="margin-bottom: 15px">
+		<p class="nameArea">
+			Ieuan Morris<br>
+			Copyright © | 2018<br>
+		</p>
+		<br>
+	</footer>
+</body>
+
+</html>
