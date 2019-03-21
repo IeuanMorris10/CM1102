@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Vintage Store</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/stylesheet.css') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="icon" type="image/png" href="{{ url_for('static',filename='images/Icon.png') }}" />
+</head>
+
+
+{% include 'includes/_navbar.html' %}
+
+<div align="center">
+  {% include 'includes/_messages.html' %}
+  {% block body %}{% endblock %}
+</div>
+
+</html>

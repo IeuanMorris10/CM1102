@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="split left" , align="center">
+  <h1 class="title">Details</h1>
+  <hr class="rule">
+
+  <p> Post Code </p>
+  <input type="text" style="padding: 10px;" name="user_postcode_input" size="80" placeholder="Postcode..." />
+  <br><br>
+
+  <p> Address 1 </p>
+  <input type="text" style="padding: 10px;" name="user_add1_input" size="80" maxlength="30" placeholder="Address 1..." />
+  <br><br>
+
+  <p> Address 2 </p>
+  <input type="text" style="padding: 10px;" name="user_add1_input" size="80" maxlength="20" placeholder="Address 2..." />
+  <br><br>
+
+  <p> Message </p>
+  <input type="text" style="padding: 20px;" name="user_message_input" size="75" placeholder="Message..." />
+  <br><br>
+
+</div>
+
+<div class="split right" , align="center">
+
+  <h1 class="title">Basket</h1>
+  <hr class="rule">
+  <br>
+
+
+  <table class="">
+    <tr>
+      <th>Product</th>
+      <th>Quantity </th>
+      <th>Price </th>
+      <th>Total </th>
+    </tr>
+
+    {% for key, value in display_cart.items() %}
+    <tr>
+      <td>{{ value['Product name'] }}</td>
+      <td>{{ value['quantity'] }}</td>
+      <td>£{{ value['price'] }}</td>
+      <td>£{{ (value['quantity'] * value['price']) }}</td>
+
+      <td>
+        <form action="{{ url_for('delete_item', id=key|int) }}" method="POST">
+          <input class="" type="submit" value="Delete">
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+
+  </table>
+  <br> <br>
+  <th>Sub Total: £{{ sub_total }} </th>
+  <th>Total: £{{ total }} </th>
+  <th>Number of items: {{ total_quantity }} </th>
+  <h1>
+    <a class="" href="/checkout">Checkout</a>
+  </h1>
+
+
+  {% endblock %}

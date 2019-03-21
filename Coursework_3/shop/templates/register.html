@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1> Register </h1>
+<hr class="rule" />
+
+{% from 'includes/_formhelpers.html' import render_field %}
+
+<form method="POST" action="">
+
+  <div class="form-group">
+    {{render_field(form.name, class_="form-control")}}
+  </div>
+  <br>
+
+  <div class="form-group">
+    {{render_field(form.email, class_="form-control")}}
+  </div>
+  <br>
+
+  <div class="form-group">
+    {{render_field(form.username, class_="form-control")}}
+  </div>
+  <br>
+
+  <div class="form-group">
+    {{render_field(form.password, class_="form-control")}}
+  </div>
+  <br>
+
+  <div class="form-group">
+    {{render_field(form.passwordConfirm, class_="form-control")}}
+  </div>
+  <br>
+
+  <div class="">
+    {{ form.submit() }}
+  </div>
+
+</form>
+
+<small>
+  Already Signed Up? <a href="{{ url_for('sign_in') }}">Sign In</a>
+</small>
+{% endblock %}

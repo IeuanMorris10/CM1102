@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<header>
+  <img src="static/images/header-images/womans_head.jpg" class="headerImage" alt="Header Image">
+  <h1 class="title">Womens</h1>
+  <hr class="rule" />
+</header>
+
+<body>
+  <select>
+    <option value="DF">Default</option>
+    <option value="HL">Price: Descending</option>
+    <option value="LH">Price: Ascending</option>
+  </select>
+
+  <div class="row">
+    <form method="POST" action="">
+      {% for item in items %}
+      <div class="column">
+        <a href="women/{{item.id}}"><img src="{{ url_for('static', filename='images/item-images/' + item.image_file) }}" width="97%"></a>
+        <p>£{{item.price}}</p>
+        <p>{{item.description_1}}</p>
+      </div>
+      {% endfor %}
+    </form>
+  </div>
+
+</body>
+
+{% endblock %}

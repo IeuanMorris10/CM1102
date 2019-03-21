@@ -1,0 +1,28 @@
+{% extends 'layout.html'%}
+
+{% block body %}
+
+<body>
+  <h1>{{ item.item_name }}</h1>
+  <hr class="rule" />
+  <div class="split left" , align="center">
+    <img src="{{ url_for('static', filename='images/item-images/' + item.image_file) }}" width="90%">
+  </div>
+
+  <div class="split right" , align="center">
+    <br><br><br>
+    <p>Description: {{item.description_2}}</p>
+    <br>
+    <p>Item Size: {{item.size}}</p>
+    <br>
+    <p>Price: £{{item.price}}</p>
+
+    <br>
+    <a class="" href="/add_to_cart/{{item.id}}">Add to Cart</a>
+    <p></p>
+    <a class="" href="/add_to_wishlist/{{item.id}}">Add to Wishlist</a>
+  </div>
+</body>
+
+
+{% endblock %}

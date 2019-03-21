@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1 class="title">Review</h1>
+</header>
+
+<hr class="rule">
+<br>
+
+
+<form action="cgi-bin/contact_backend.py" method="GET">
+  <div class="split left" align="center">
+
+    <br>
+    <p> Order Number </p>
+    <input type="text" style="padding: 10px;" name="user_order_input" size="50" placeholder="Order Number..." />
+    <br></br>
+
+    <p> Item Name </p>
+    <input type="text" style="padding: 10px;" name="item_name_input" size="50" placeholder="Item Name..." />
+    <br></br>
+
+    <p> Review </p>
+    <input type="text" style="padding: 30px;" name="user_message_year" size="47" placeholder="Review..." />
+    <br>
+
+    <div>
+      <br>
+      <input type="submit" value="Submit" class="button2" />
+      <input type="reset" value="Clear" class="button2" />
+    </div>
+
+  </div>
+</form>
+
+<div class="split right" , align="center">
+  <h1>Mens Items</h1>
+  <ul class="list-group">
+    {% for item in items %}
+    <a href="men/{{item.id}}">
+      <li class="list-group-item">{{item.description_2}}</li>
+    </a>
+    {% endfor %}
+  </ul>
+
+  <h1>Womens Items</h1>
+  <ul>
+    {% for item in items_2 %}
+    <a href="women/{{item.id}}">
+      <li class="list-group-item">{{item.description_2}}</li>
+    </a>
+    {% endfor %}
+  </ul>
+
+</div>
+
+{% endblock %}

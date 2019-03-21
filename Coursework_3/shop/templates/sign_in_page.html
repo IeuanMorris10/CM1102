@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+{% from 'includes/_formhelpers.html' import render_field %}
+
+<div class="split-left" align="center">
+
+  <h1 class="title">Sign In</h1>
+  <hr class="rule">
+
+  <form method="POST" action="">
+    {{ form.csrf_token }}
+
+    <div class="">
+      <div class="form-group">
+        {{render_field(form.email, class_="form-control")}}
+      </div>
+      <br>
+
+      <div class="form-group">
+        {{render_field(form.password, class_="form-control")}}
+      </div>
+
+      <div class="">
+        {{ form.submit() }}
+      </div>
+  </form>
+
+  <br>
+
+  <small>
+    Don't Have an Account? <a href="{{ url_for('register') }}">Register Here</a>
+  </small>
+</div>
+
+
+{% endblock %}
